@@ -25,6 +25,11 @@ fun main(){
 
     println(myValue)
 
+    //varargs
+    printAll("ram", "shyam", "hari")
+
+    log("Hello", "Hallo", "Salut", "Hola", "你好")
+
 }
 
 
@@ -40,4 +45,12 @@ fun multiply(x:Int, y:Int)= x*y;
 
 fun printMessageWithPrefix(message: String, prefix:String ="default"){
   println("$prefix $message")
+}
+
+fun printAll(vararg messages:String){
+    for (m in messages) println(m)
+}
+
+fun log(vararg entries: String) {
+    printAll(*entries)                                             // 5
 }
