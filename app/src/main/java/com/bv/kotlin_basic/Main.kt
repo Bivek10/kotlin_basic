@@ -1,5 +1,7 @@
 package com.bv.kotlin_basic
 
+import java.util.function.BinaryOperator
+
 fun main(){
     println("Hello world")
     printMessage("Hello Bivek")
@@ -30,6 +32,11 @@ fun main(){
 
     log("Hello", "Hallo", "Salut", "Hola", "你好")
 
+    val bike: Bike = Bike(color = "Red", capacity= 200.0, speedLimit = 120, wheel = "4");
+    println(bike.getVehicleDetail())
+
+    println(calulator(5,5, ::sum))
+    println(calulator(10,11, ::multiply))
 }
 
 
@@ -53,4 +60,9 @@ fun printAll(vararg messages:String){
 
 fun log(vararg entries: String) {
     printAll(*entries)                                             // 5
+}
+
+//Taking the fun as parameters
+fun calulator(x:Int, y:Int, operator: (Int, Int)->Int):Int{
+    return  operator(x, y);
 }

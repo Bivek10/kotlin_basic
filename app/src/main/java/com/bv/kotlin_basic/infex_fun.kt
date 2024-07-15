@@ -8,5 +8,4 @@ class Person(val name:String){
         likedPerson.add(other)
         println("liked person before $likedPerson")
     }
-
 }
