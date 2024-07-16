@@ -3,40 +3,28 @@ package com.bv.kotlin_basic
 import java.util.function.BinaryOperator
 
 fun main(){
-    println("Hello world")
-    printMessage("Hello Bivek")
-    println("sum:: ${sum(10, 50)}")
-    println("Multiply:: ${multiply(10, 10)}")
+    // object initiation
+    val book:Book = Book("Biology", price = 200)
+    println("Details: ${book.getDetail()}")
+    book
 
-    printMessageWithPrefix(message = "test name argument")
-    printMessageWithPrefix("actual message", "hello prefix")
-    printMessageWithPrefix(prefix = "prefix first", message = "test")
+    val tesla:Car = Car("Tesla", "T1", "1900")
 
-    //infix function
-    val person1= Person("Bivek")
-    val person2= Person("Ram")
+    val human:Animals = Human()
+    human.walk()
+    human.sound()
 
-    person1 likes  person2
-    // infix extension fun on int
-    infix fun Int.times(str:String) = str.repeat(this)
-    println(0 times "bye")
+    val dog:Animals = Dog()
 
-    infix fun String.onto(other:String)= Pair(this, other)
+    dog.walk()
+    dog.sound()
 
-    val myValue = "ram".onto("sita")
+    val turk:GearBox = Truck(gearLimit = 5)
 
-    println(myValue)
+    println(turk.getType())
 
-    //varargs
-    printAll("ram", "shyam", "hari")
+    println(turk.onChangedGear())
 
-    log("Hello", "Hallo", "Salut", "Hola", "你好")
-
-    val bike: Bike = Bike(color = "Red", capacity= 200.0, speedLimit = 120, wheel = "4");
-    println(bike.getVehicleDetail())
-
-    println(calulator(5,5, ::sum))
-    println(calulator(10,11, ::multiply))
 }
 
 
